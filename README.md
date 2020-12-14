@@ -22,6 +22,8 @@ sudo usermod -a -G dialout $USER
 sudo chmod a+rw /dev/ttyUSB0
 ```
 
+
+Had to hold boot button on chip while running
 ```
 esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 115200 erase_flash
 ```
