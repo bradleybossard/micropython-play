@@ -22,8 +22,33 @@ sudo usermod -a -G dialout $USER
 sudo chmod a+rw /dev/ttyUSB0
 ```
 
-
-Had to hold boot button on chip while running
+## Get stats of chip (chip, capability, frequency, etc)
+``
+esptool.py read_mac
 ```
-esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 115200 erase_flash
+
+Erase existing firmware
+NOTE: Had to hold boot button on chip while running
+```
+esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 erase_flash
+```
+
+## Flash MicroPython for ESP-WROOM-32
+```
+esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0x0 esp8266-20200911-v1.13.bin
+```
+
+## Flash MicroPython for ESP-WROOM-32
+```
+esptool.py --port /dev/ttyUSB1 --baud 460800 write_flash 0x1000 esp32-idf3-20200902-v1.13.bin
+```
+
+## List connected devices
+```
+rshell -l
+```
+
+## Connect to Micropython
+```
+rshell --port /dev/ttyUSB1 -a
 ```
