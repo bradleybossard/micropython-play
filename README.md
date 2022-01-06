@@ -52,3 +52,16 @@ rshell -l
 ```
 rshell --port /dev/ttyUSB1 -a
 ```
+
+## Start REPL once connected
+```
+repl
+```
+
+## Toggle onboard LED on/off
+```
+import machine
+led = machine.Pin(2, machine.Pin.OUT)
+led.on()
+led.off()
+```
